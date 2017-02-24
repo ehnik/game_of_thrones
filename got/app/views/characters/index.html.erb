@@ -1,0 +1,21 @@
+<center>
+<h1>All Characters</h1>
+<body>
+<ul>
+  <% @houses.each do |house| %>
+    <% house.characters.each do |character| %>
+    <li>
+      <%= link_to "#{character.name}", "/houses/#{house.id}/characters/#{character.id}" %>
+      <br>
+      <%=link_to "Edit", "/houses/#{house.id}/characters/#{character.id}/edit" %>
+      <%=link_to "Delete", "/houses/#{house.id}/characters/#{character.id}/delete", method: :delete %>
+      <% charHouse = character.house_id %>
+      <%= House.find(charHouse).name%>
+    </li>
+    <br>
+  <% end %>
+<% end %>
+</ul>
+<%= link_to "Create a New Character", '/characters/new' %> </p>
+<%=link_to "All Houses", houses_path %>
+</body>

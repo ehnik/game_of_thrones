@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "thrones";
+  src: url('game_of_thrones.ttf') format("truetype");
+}
+
+h1 {
+  font-family: "thrones";
+  color: gray;
+}
+
+body {
+  background: url(http://wallpapercave.com/wp/3tFFD8R.jpg);
+  background-size: 100% auto;
+  color: gray;
+  font-size: 30px;
+}

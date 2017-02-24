@@ -1,0 +1,18 @@
+<h2>New Character</h2>
+<body>
+<%= form_tag('/characters/new') do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <br>
+  <p> House: </p>
+  <% @houses.each do |house| %>
+  <%= label_tag("#{house.name}") %>
+  <%= radio_button_tag(:house_id, house.id) %>
+  <% end %>
+  <br>
+  <br>
+  <%= submit_tag "Create character"%>
+  <% end %>
+
+  <p> <%= link_to "Back to Character Index", characters_path %> </p>
+</body>

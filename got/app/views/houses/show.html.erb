@@ -1,0 +1,13 @@
+<h1>House of <%=@house.name%></h1>
+<p> <%= @new_id %></p>
+
+<p> House Members: </p>
+<ul style = "list-style: none;">
+  <% @house.characters.each_with_index do |character, i| %>
+    <li> <%= "#{character.name}"%> </li>
+    <li> <%=link_to "Edit", "/houses/#{@house.id}/characters/#{character.id}/edit" %> </li>
+    <li> <%=link_to "Delete", "/houses/#{@house.id}/characters/#{character.id}", method: :delete %> </li>
+    <br>
+    <% end %>
+</ul>
+<p> <%= link_to "Back to All Houses", houses_path %> </p>

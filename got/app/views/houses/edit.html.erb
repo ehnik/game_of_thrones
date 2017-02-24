@@ -1,0 +1,16 @@
+<h2>Update House</h2>
+
+<%= form_for @house do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <p> House: </p>
+  <% @houses.each do |house| %>
+  <%= label_tag("#{house.name}") %>
+  <%= radio_button_tag(:house_id, house.id) %>
+  <% end %>
+  <br>
+  <br>
+  <%= f.submit %>
+  <% end %>
